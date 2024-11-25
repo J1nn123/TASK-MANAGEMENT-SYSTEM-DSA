@@ -16,9 +16,7 @@ import javax.swing.table.TableColumn;
 
 public class TASKMAIN extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TASKMAIN
-     */
+    
     public TASKMAIN() {
         initComponents();
        
@@ -398,8 +396,8 @@ public class TASKMAIN extends javax.swing.JFrame {
     }
     
     
-    
-    private void updtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updtActionPerformed
+    //button to update the edited task
+    private void updtActionPerformed(java.awt.event.ActionEvent evt) {
        DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
     int selectedRow = jTable1.getSelectedRow();
     
@@ -427,26 +425,12 @@ public class TASKMAIN extends javax.swing.JFrame {
     } else {
         JOptionPane.showMessageDialog(this, "Please select a row to update.");
     }
-    }//GEN-LAST:event_updtActionPerformed
+    }
 
     
 
-
-  /*
-    private void updtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updtMouseClicked
-    
-    }//GEN-LAST:event_updtMouseClicked
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-       
-         
-    
-        
-        
-        
-    }//GEN-LAST:event_jButton3MouseClicked
-*/
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+//button to add move to done table the tasks
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
          DefaultTableModel model1 = (DefaultTableModel) jTable1.getModel();
     DefaultTableModel model2 = (DefaultTableModel) jTable2.getModel();
 
@@ -475,31 +459,9 @@ public class TASKMAIN extends javax.swing.JFrame {
         }
     }
     
-    }//GEN-LAST:event_jButton3ActionPerformed
-/*
-    private void jDateChooser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDateChooser1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jDateChooser1MouseClicked
-
-    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ClearActionPerformed
-
-    private void ClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ClearMouseClicked
-
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-
-   }
-    }//GEN-LAST:event_jTable1MouseClicked
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-*/
+    }
   
+    //here is the bubble sort
 private void bubbleSortTable(javax.swing.JTable table) {
     DefaultTableModel model = (DefaultTableModel) table.getModel();
     int rowCount = model.getRowCount();
@@ -558,6 +520,8 @@ private void bubbleSortTable(javax.swing.JTable table) {
     }
 }
 
+//swap the row when the bubble sort true
+
 private void swapRows(DefaultTableModel model, int row1, int row2) {
     int colCount = model.getColumnCount();
     for (int col = 0; col < colCount; col++) {
@@ -567,6 +531,7 @@ private void swapRows(DefaultTableModel model, int row1, int row2) {
     }
 }
 
+//display the row in the textfield from the when it click
 private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
     DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
     int selectedRow = jTable1.getSelectedRow();  // Get the selected row index
